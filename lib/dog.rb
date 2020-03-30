@@ -41,8 +41,8 @@ class Dog
 
   def self.create(hash)
     self.new.tap do |p|
-      hash.each do |att|
-        
+      hash.each do |att, value|
+        p.sent("#{att}=", value)
       end
     end
   end
