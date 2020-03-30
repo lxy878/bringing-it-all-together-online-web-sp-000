@@ -40,7 +40,9 @@ class Dog
   end
 
   def self.create(hash)
-    new_dog = Dog.new
+    self.new.tap do |p|
+      
+    end
   end
 
   def self.new_from_db(row)
