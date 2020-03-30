@@ -2,7 +2,7 @@ class Dog
   attr_accessor :name, :breed, :id
 
   def initialize(hash)
-    hash.each {|key, value| object.send("#{key}=", value)}
+    hash.each {|key, value| self.send("#{key}=", value)}
     binding.pry
   end
 
