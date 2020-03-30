@@ -38,6 +38,7 @@ class Dog
 
   def self.create(hash)
     new_dog = self.new(hash)
+    new_dog.save
   end
 
   def self.new_from_db(row)
