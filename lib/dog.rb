@@ -3,7 +3,7 @@ class Dog
 
   def initialize(hash)
     binding.pry
-    self.new.tap do |object|
+    a = self.new.tap do |object|
       hash.each {|key, value| object.send("#{key}=", value)}
     end
     self
