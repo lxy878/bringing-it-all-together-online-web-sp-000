@@ -30,13 +30,17 @@ class Dog
       DB[:conn].execute(sql, @name, @breed)
       @id = DB[:conn].execute('SELECT last_insert_rowid() FROM dogs')[0][0]
     else
-      DB[:conn].execute('UPDATE dogs set name = ?, breed = ? WHERE id = ?', @name, @breed, @id)
+      self.update
     end
     self
   end
 
+  def update
+    DB[:conn].execute('UPDATE dogs set name = ?, breed = ? WHERE id = ?', @name, @breed, @id)
+  end
+
   def self.create(hash)
-    
+    new_dog = Dog.new
   end
 
   def self.new_from_db(row)
