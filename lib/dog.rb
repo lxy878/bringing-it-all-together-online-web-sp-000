@@ -61,7 +61,6 @@ class Dog
 
   def self.find_or_create_by(hash)
     dog_data = self.find_by_name(hash[:name])
-    binding.pry
     if dog_data.empty?
       self.create(hash)
     else
