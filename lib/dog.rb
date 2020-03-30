@@ -56,6 +56,7 @@ class Dog
       SELECT * FROM dogs WHERE id = ?
     SQL
     array = DB[:conn].execute(sql, id)
+    binding.pry
   end
 
   def self.find_or_create_by(name:, breed:)
