@@ -37,12 +37,7 @@ class Dog
   end
 
   def self.create(hash)
-    self.new.tap do |object|
-      hash.each do |att, value|
-        object.send("#{att}=", value)
-      end
-      object.save
-    end
+    new_dog = self.new(hash)
   end
 
   def self.new_from_db(row)
