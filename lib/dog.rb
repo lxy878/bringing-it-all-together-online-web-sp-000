@@ -5,6 +5,7 @@ class Dog
     self.new.tap do |object|
       hash.each {|key, value| object.send("#{key}=", value)}
     end
+    self
   end
 
   def self.create_table
