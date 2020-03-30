@@ -52,7 +52,10 @@ class Dog
   end
 
   def self.find_by_id(id)
-
+    sql = <<-SQL
+      SELECT * FROM dogs WHERE id = ?
+    SQL
+    array = DB[:conn].execute(sql, id)
   end
 
   def self.find_or_create_by(name:, breed:)
