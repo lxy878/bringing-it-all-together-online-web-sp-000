@@ -64,8 +64,7 @@ class Dog
     if dog_data.empty?
       self.create(hash)
     else
-      id = dog_data.first.first
-      self.find_by_id(id)
+      self.new_from_db(dog_data.first)
     end
   end
 
