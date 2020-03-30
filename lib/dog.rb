@@ -44,6 +44,7 @@ class Dog
       hash.each do |att, value|
         p.sent("#{att}=", value)
       end
+      p
     end
   end
 
