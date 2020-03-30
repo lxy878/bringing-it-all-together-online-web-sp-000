@@ -1,11 +1,9 @@
 class Dog
   attr_accessor :name, :breed, :id
 
-  def initialize(hash)
-    @id = id
-    @name = name
-    @breed = breed
-  end
+  # def initialize(hash)
+  #   self.new.tap
+  # end
 
   def self.create_table
     sql = <<-SQL
