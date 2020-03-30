@@ -1,9 +1,11 @@
 class Dog
   attr_accessor :name, :breed, :id
 
-  # def initialize(hash)
-  #   self.new.tap
-  # end
+  def initialize(hash)
+    self.new.tap do |object|
+      hash.each {|key, value| object.send("#{key}=", value)}
+    end
+  end
 
   def self.create_table
     sql = <<-SQL
