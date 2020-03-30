@@ -3,7 +3,6 @@ class Dog
 
   def initialize(hash)
     hash.each {|key, value| self.send("#{key}=", value)}
-    binding.pry
   end
 
   def self.create_table
