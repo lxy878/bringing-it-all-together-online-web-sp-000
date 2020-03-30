@@ -2,11 +2,10 @@ class Dog
   attr_accessor :name, :breed, :id
 
   def initialize(hash)
-    binding.pry
     a = self.new.tap do |object|
       hash.each {|key, value| object.send("#{key}=", value)}
     end
-    self
+    binding.pry
   end
 
   def self.create_table
