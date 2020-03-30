@@ -45,8 +45,6 @@ class Dog
       end
       object.save
     end
-    # new_dog = self.new(hash)
-    # new_dog.save
   end
 
   def self.new_from_db(row)
